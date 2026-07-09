@@ -1,15 +1,41 @@
-<!-- Load Blockly core -->
-<script src="https://unpkg.com/blockly/blockly_compressed.js"></script>
-<!-- Load the default blocks -->
-<script src="https://unpkg.com/blockly/blocks_compressed.js"></script>
-<!-- Load a generator -->
-<script src="https://unpkg.com/blockly/javascript_compressed.js"></script>
-<!-- Load a message file -->
-<script src="https://unpkg.com/blockly/msg/en.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockly Test</title>
 
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-    <body>
-        <h1>Welcome!</h1>
-        <p th:text="${message}">Dynamic text</p>
-    </body>
+    <!-- Load Blockly core -->
+    <script src="https://unpkg.com/blockly/blockly_compressed.js"></script>
+    <!-- Load the default blocks -->
+    <script src="https://unpkg.com/blockly/blocks_compressed.js"></script>
+    <!-- Load a message file -->
+    <script src="https://unpkg.com/blockly/msg/en.js"></script>
+
+    <style>
+        #blocklyDiv {
+            height: 480px;
+            width: 600px;
+            border: 1px solid #ccc;
+            margin: 20px auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+<h1>Blockly Test</h1>
+<div id="blocklyDiv"></div>
+
+<!-- Load your custom script after the HTML is rendered -->
+<script src="BlockyTest.js"></script>
+</body>
 </html>
