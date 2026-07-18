@@ -11,6 +11,10 @@ const toolbox = {
       kind: 'block',
       type: 'controls_whileUntil',
     },
+    {
+    kind: 'block',
+    type:'controls_for',
+    }
     // You can add more blocks to this array.
   ],
 };
