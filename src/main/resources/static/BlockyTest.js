@@ -1,21 +1,3 @@
-const myTheme = Blockly.Theme.defineTheme('myTheme', 
-{
-  'base': Blockly.Themes.Classic,
-  'blockStyles': 
-  {
-    'costumControlBlock': 
-    {
-      'colourPrimary': '#66baff',
-      'colourSecondary': '#43a9fd',
-      'colourTertiary': '#1897ff'
-    }
-  },
-  'componentStyles': {}
-});
-
-// blockTypeStyleMap nu mai există pe Theme în Blockly modern (13.x),
-// deci stilul se aplică manual pe blocurile dorite la creare.
-const CUSTOM_STYLE_BLOCK_TYPES = new Set(['controls_if', 'controls_whileUntil']);
 
 
 const toolbox = 
@@ -26,7 +8,7 @@ const toolbox =
     {
       kind: 'category',
       name: 'Control',
-      colour: '#0590e0',
+      colour: '#66baff',
       contents: 
       [
         {
@@ -47,6 +29,7 @@ const toolbox =
     {
       kind: 'category',
       name: 'Logic',
+      colour: '#38df5c',
       contents:
       [
         {
@@ -58,19 +41,62 @@ const toolbox =
   ],
 };
 
-// The toolbox gets passed to the configuration options during injection.
-const workspace = Blockly.inject('blocklyDiv', { toolbox: toolbox, theme: myTheme });
 
-// Aplică stilul custom doar pe blocurile din CUSTOM_STYLE_BLOCK_TYPES, la creare.
+
+function applyCustomStyles(targetWorkspace)
+{
+  targetWorkspace.getAllBlocks(false).forEach((block) =>
+  {
+    if(controlBlocks.has(block.type))
+    {
+      block.setStyle('customControlBlock');
+    }
+
+    if(logicBlocks.has(block.type))
+    {
+      block.setStyle('customLogicBlock');
+    }
+  });
+}
+
+const workspace = Blockly.inject('blocklyDiv', { toolbox: toolbox, theme: controlBlocksTheme });
+
 workspace.addChangeListener((event) => 
 {
-  if (event.type !== Blockly.Events.BLOCK_CREATE) 
+  if(event.type !== Blockly.Events.BLOCK_CREATE) 
   {
     return;
   }
   const block = workspace.getBlockById(event.blockId);
-  if (block && CUSTOM_STYLE_BLOCK_TYPES.has(block.type)) 
+
+  if(block && controlBlocks.has(block.type)) 
   {
-    block.setStyle('costumControlBlock');
+    block.setStyle('customControlBlock');
+  }
+  if(block && logicBlocks.has(block.type)) 
+  {
+    block.setStyle('customLogicBlock');
   }
 });
+
+workspace.addChangeListener((event) =>
+{
+  if(event.type !== Blockly.Events.TOOLBOX_ITEM_SELECT && event.type !== Blockly.Events.CLICK)
+  {
+    return;
+  }
+
+  const flyout = workspace.getFlyout();
+
+  if(flyout && flyout.getWorkspace())
+  {
+    applyCustomStyles(flyout.getWorkspace());
+  }
+});
+
+const initialFlyout = workspace.getFlyout();
+
+if(initialFlyout && initialFlyout.getWorkspace()) 
+{
+  applyCustomStyles(initialFlyout.getWorkspace());
+}
