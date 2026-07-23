@@ -10,13 +10,12 @@ const myTheme = Blockly.Theme.defineTheme('myTheme',
       'colourTertiary': '#1897ff'
     }
   },
-  'componentStyles': {},
-  'blockTypeStyleMap':
-  {
-    'controls_if': 'costumControlBlock',   // aplică noul style DOAR pe controls_if
-    'controls_whileUntil': 'costumControlBlock'   // aplică noul style DOAR pe controls_if
-  }
+  'componentStyles': {}
 });
+
+// blockTypeStyleMap nu mai există pe Theme în Blockly modern (13.x),
+// deci stilul se aplică manual pe blocurile dorite la creare.
+const CUSTOM_STYLE_BLOCK_TYPES = new Set(['controls_if', 'controls_whileUntil']);
 
 
 const toolbox = 
@@ -61,3 +60,17 @@ const toolbox =
 
 // The toolbox gets passed to the configuration options during injection.
 const workspace = Blockly.inject('blocklyDiv', { toolbox: toolbox, theme: myTheme });
+
+// Aplică stilul custom doar pe blocurile din CUSTOM_STYLE_BLOCK_TYPES, la creare.
+workspace.addChangeListener((event) => 
+{
+  if (event.type !== Blockly.Events.BLOCK_CREATE) 
+  {
+    return;
+  }
+  const block = workspace.getBlockById(event.blockId);
+  if (block && CUSTOM_STYLE_BLOCK_TYPES.has(block.type)) 
+  {
+    block.setStyle('costumControlBlock');
+  }
+});
