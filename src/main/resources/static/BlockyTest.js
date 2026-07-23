@@ -3,7 +3,7 @@ const myTheme = Blockly.Theme.defineTheme('myTheme',
   'base': Blockly.Themes.Classic,
   'blockStyles': 
   {
-    'costumControlBlock': 
+    'customControlBlock': 
     {
       'colourPrimary': '#66baff',
       'colourSecondary': '#43a9fd',
@@ -48,6 +48,7 @@ const toolbox =
     {
       kind: 'category',
       name: 'Logic',
+       colour:"red",
       contents:
       [
         {
