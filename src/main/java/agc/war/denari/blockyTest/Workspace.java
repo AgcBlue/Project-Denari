@@ -6,12 +6,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.ui.Model;
 
 @Controller 
-public class WebController 
+public class Workspace 
 {
-    @GetMapping("/Welcome")
+    @GetMapping("/Workspace")
     public String welcome(Model model) 
     {
         model.addAttribute("message", "Hello from Spring Boot!");
-        return "Welcome";
+        return "Workspace";
     }
 }
