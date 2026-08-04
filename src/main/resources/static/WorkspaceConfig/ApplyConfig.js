@@ -3,40 +3,14 @@ function applyCustomStyles(targetWorkspace)
 {
   targetWorkspace.getAllBlocks(false).forEach((block) =>
   {
-    if(loopBlocks.has(block.type))
-    {
-      block.setStyle('customLoopBlock');
-    }
+    if(loopBlocks.has(block.type)) block.setStyle('customLoopBlock');
+    if(logicBlocks.has(block.type)) block.setStyle('customLogicBlock');
+    if(mathBlocks.has(block.type)) block.setStyle('customMathBlock');
+    if(textBlocks.has(block.type)) block.setStyle('customTextBlock')
+    if(listBlocks.has(block.type)) block.setStyle('customListBlock')
+    if(functionBlocks.has(block.type)) block.setStyle('customFunctionBlock')
+    if(variableBlocks.has(block.type)) block.setStyle('customVariableBlock')
 
-    if(logicBlocks.has(block.type))
-    {
-      block.setStyle('customLogicBlock');
-    }
-
-    if(mathBlocks.has(block.type))
-    {
-      block.setStyle('customMathBlock');
-    }
-
-    if(textBlocks.has(block.type))
-    {
-      block.setStyle('customTextBlock')
-    }
-
-    if(listBlocks.has(block.type))
-    {
-      block.setStyle('customListBlock')
-    }
-
-    if(functionBlocks.has(block.type))
-    {
-      block.setStyle('customFunctionBlock')
-    }
-
-    if(variableBlocks.has(block.type))
-    {
-      block.setStyle('customVariableBlock')
-    }
   });
 }
 
@@ -45,44 +19,24 @@ workspace.addChangeListener((event) =>
   if(event.type !== Blockly.Events.BLOCK_CREATE) 
   {
     return;
-  }
+  } 
+  
+  const ids = event.ids || [event.blockId];
 
-  const block = workspace.getBlockById(event.blockId);
-
-  if(block && loopBlocks.has(block.type)) 
+  ids.forEach((id) => 
   {
-    block.setStyle('customLoopBlock');
-  }
+    const block = workspace.getBlockById(id);
 
-  if(block && logicBlocks.has(block.type)) 
-  {
-    block.setStyle('customLogicBlock');
-  }
+    if(!block) return;
 
-  if(block && mathBlocks.has(block.type))
-  {
-    block.setStyle('customMathBlock');
-  }
-
-  if(block && textBlocks.has(block.type))
-  {
-    block.setStyle('customTextBlock');
-  }
-
-  if(block && listBlocks.has(block.type))
-  {
-    block.setStyle('customListBlock');
-  }
-
-  if(block && functionBlocks.has(block.type))
-  {
-    block.setStyle('customFunctionBlock');
-  }
-
-  if(block && variableBlocks.has(block.type))
-  {
-    block.setStyle('customVariableBlock');
-  }
+    if(loopBlocks.has(block.type)) block.setStyle('customLoopBlock');
+    if(logicBlocks.has(block.type)) block.setStyle('customLogicBlock');
+    if(mathBlocks.has(block.type)) block.setStyle('customMathBlock');
+    if(textBlocks.has(block.type)) block.setStyle('customTextBlock');
+    if(listBlocks.has(block.type)) block.setStyle('customListBlock');
+    if(functionBlocks.has(block.type)) block.setStyle('customFunctionBlock');
+    if(variableBlocks.has(block.type)) block.setStyle('customVariableBlock');
+  });
 });
 
 workspace.addChangeListener((event) =>

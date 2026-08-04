@@ -5,45 +5,45 @@ const cusomBlocksTheme = Blockly.Theme.defineTheme('cusomBlocksTheme',
   {
     'customLoopBlock': 
     {
-      colourPrimary: '#66baff',
-      colourSecondary: '#43a9fd',
-      colourTertiary: '#1897ff'
+      colourPrimary: '#a73838',
+      colourSecondary: '#961e1e',
+      colourTertiary: '#3a0909'
     },
     'customLogicBlock': 
     {
-      colourPrimary: '#38df5c',
-      colourSecondary: '#1ebe41',
-      colourTertiary: '#19d442'
+      colourPrimary: '#af6b2b',
+      colourSecondary: '#8f5723',
+      colourTertiary: '#412307'
     },
     'customMathBlock': 
     {
-      colourPrimary: '#1c2aec',
-      colourSecondary: '#121ca3',
-      colourTertiary: '#060b49'
+      colourPrimary: '#a6a837',
+      colourSecondary: '#656619',
+      colourTertiary: '#262707'
     },
     'customTextBlock': 
     {
-      colourPrimary: '#6d38c2',
-      colourSecondary: '#6d38c2',
-      colourTertiary: '#6d38c2'
+      colourPrimary: '#207432',
+      colourSecondary: '#072b0f',
+      colourTertiary: '#19d442'
     },
     'customListBlock': 
     {
-      colourPrimary: '#aed348',
-      colourSecondary: '#6f8829',
-      colourTertiary: '#3e500e'
+      colourPrimary: '#49b1b1',
+      colourSecondary: '#1f7979',
+      colourTertiary: '#0e2e2e'
     },
     'customVariableBlock': 
     {
-      colourPrimary: '#965d88',
-      colourSecondary: '#532b49',
-      colourTertiary: '#3f1b36'
+      colourPrimary: '#1b6099',
+      colourSecondary: '#124168',
+      colourTertiary: '#0b283f'
     },
     'customFunctionBlock': 
     {
-      colourPrimary: '#5f574c',
-      colourSecondary: '#1d160d',
-      colourTertiary: '#5f574c'
+      colourPrimary: '#7e42a0',
+      colourSecondary: '#432157',
+      colourTertiary: '#240d31'
     }
   },
 
