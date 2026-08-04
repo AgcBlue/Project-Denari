@@ -47,10 +47,48 @@
 <body>
 <div id="blocklyDiv"></div>
 
+<div>
+
+    <button onclick="alert('The position was saved!')" id="saveButton">Save</button>
+    <style>
+
+    #saveButton
+    {
+        position: fixed;
+        z-index: 100;
+        top: 10px;
+        right: 10px;
+    }
+
+    </style>
+
+</div>
+<div>
+
+    <button onclick="alert('The position was loaded!')" id="loadButton">Load</button>
+    <style>
+
+    #loadButton
+    {
+        position: fixed;
+        z-index: 100;
+        top: 30px;
+        right: 10px;
+    }
+
+    </style>
+
+</div>
+
+
+
 <!-- Load your custom script after the HTML is rendered -->
 <script src="WorkspaceConfig/ThemesConfig.js"></script>
 <script src="WorkspaceConfig/SetsConfig.js"></script>
 <script src="WorkspaceConfig/ToolboxConfig.js"></script>
 <script src="WorkspaceConfig/ApplyConfig.js"></script>
+<script src = "WorkspaceConfig/SaveButton.js"></script>
+
+
 </body>
 </html>
