@@ -18,5 +18,19 @@ function loadFunction()
     }
 }
 
+const meniu = document.getElementById('menuContent');
+
+document.getElementById('menuButton').addEventListener('click', () => {
+    meniu.classList.toggle('open');
+});
+
+document.addEventListener('click', (event) => {
+    const clickInMeniu = event.target.closest('#Menu');
+    if (!clickInMeniu) 
+    {
+        meniu.classList.remove('open');
+    }
+});
+
 document.getElementById('saveButton').addEventListener('click', saveFunction);
 document.getElementById('loadButton').addEventListener('click', loadFunction);

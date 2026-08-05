@@ -1,94 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
+    <link rel = "preconnect" href="https://fonts.googleapis.com">
+    <link rel = "preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href = "https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link href = css/workspace.css rel="stylesheet">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Workspace</title>
 
     <!-- Load Blockly core -->
-    <script src="https://unpkg.com/blockly/blockly_compressed.js"></script>
+    <script src = "https://unpkg.com/blockly/blockly_compressed.js"></script>
     <!-- Load the default blocks -->
-    <script src="https://unpkg.com/blockly/blocks_compressed.js"></script>
+    <script src = "https://unpkg.com/blockly/blocks_compressed.js"></script>
     <!-- Load a message file -->
-    <script src="https://unpkg.com/blockly/msg/en.js"></script>
-
-    <style>
-        * 
-        {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        #blocklyDiv 
-        {
-            height: 100vh;
-            width: 100vw;
-            position:fixed;
-            top: 0;
-            left: 0;
-            border: 2px solid #6d6f70;
-            margin: 0px;
-        }
-
-        body 
-        {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 20px;
-        }
-
-        h1 
-        {
-            color: #1b567e;
-        }
-    </style>
+    <script src = "https://unpkg.com/blockly/msg/en.js"></script>
 </head>
+
 <body>
-<div id="blocklyDiv"></div>
+    <div id="blocklyDiv"></div>
 
-<div>
-
-    <button onclick="alert('The position was saved!')" id="saveButton">Save</button>
-    <style>
-
-    #saveButton
-    {
-        position: fixed;
-        z-index: 100;
-        top: 10px;
-        right: 10px;
-    }
-
-    </style>
-
-</div>
-<div>
-
-    <button onclick="alert('The position was loaded!')" id="loadButton">Load</button>
-    <style>
-
-    #loadButton
-    {
-        position: fixed;
-        z-index: 100;
-        top: 30px;
-        right: 10px;
-    }
-
-    </style>
-
-</div>
+    <div>
+        <div id="Menu" class="dropdown">
+            <button id="menuButton">Menu</button>
+            <div id="menuContent" class="dropdown-content">
+                <button id="saveButton" onclick="alert('The position was saved!')" class="dropdown-item">Save</button>
+                <button id="loadButton" onclick="alert('The position was loaded!')" class="dropdown-item">Load</button>
+            </div>
+        </div>
+    </div>
 
 
 
-<!-- Load your custom script after the HTML is rendered -->
-<script src="WorkspaceConfig/ThemesConfig.js"></script>
-<script src="WorkspaceConfig/SetsConfig.js"></script>
-<script src="WorkspaceConfig/ToolboxConfig.js"></script>
-<script src="WorkspaceConfig/ApplyConfig.js"></script>
-<script src = "WorkspaceConfig/SaveButton.js"></script>
+    <!-- Load your custom script after the HTML is rendered -->
+    <script src = "js/workspaceconfig/themesconfig.js"></script>
+    <script src = "js/workspaceconfig/setsconfig.js"></script>
+    <script src = "js/workspaceconfig/toolboxconfig.js"></script>
+    <script src = "js/workspaceconfig/applyconfig.js"></script>
+    <script src = "js/workspaceconfig/savebutton.js"></script>
 
 
 </body>
+
 </html>
