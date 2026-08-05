@@ -6,7 +6,7 @@ const toolbox =
     {
       kind: 'category',
       name: 'Loop',
-      colour: '#66baff',
+      colour: '#d33e3e',
       contents: 
       [
         {
@@ -35,7 +35,7 @@ const toolbox =
     {
       kind: 'category',
       name: 'Logic',
-      colour: '#38df5c',
+      colour: '#e77e1c',
       contents:
       [
         {
@@ -72,7 +72,7 @@ const toolbox =
     {
       kind: 'category',
       name: 'Math',
-      colour: '#1c2aec',
+      colour: '#cbce3a',
       contents:
       [
         {
@@ -133,7 +133,7 @@ const toolbox =
     {
       kind: 'category',
       name: 'Text',
-      colour: '#6d38c2',
+      colour: '#26923e',
       contents:
       [
         {
@@ -202,7 +202,7 @@ const toolbox =
     {
       kind: 'category',
       name: 'List',
-      colour: '#aed348',
+      colour: '#49b1b1',
       contents:
       [
         {
@@ -259,7 +259,7 @@ const toolbox =
     {
       kind: 'category',
       name: 'Variable',
-      colour: '#965d88',
+      colour: '#1b6099',
       contents: 
       [
         {
@@ -280,7 +280,7 @@ const toolbox =
     {
       kind: 'category',
       name: 'Function',
-      colour: '#5f574c',
+      colour: '#7e42a0',
       contents: 
       [
         {
